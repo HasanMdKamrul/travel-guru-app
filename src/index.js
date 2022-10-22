@@ -2,6 +2,8 @@ import React from "react";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import ReactDOM from "react-dom/client";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import App from "./App";
 import "./assests/images/Rectangle 1.png";
 import AuthProvider from "./contexts/AuthProvider";
@@ -17,6 +19,7 @@ root.render(
       <div className="bg-cover    ">
         <AuthProvider>
           <App />
+          <ToastContainer />
         </AuthProvider>
       </div>
     </DestinationProvider>

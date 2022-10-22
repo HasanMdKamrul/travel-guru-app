@@ -1,6 +1,27 @@
-import React from "react";
+import { GoogleAuthProvider } from "firebase/auth";
+import React, { useContext } from "react";
+import { toast } from "react-toastify";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 const SignUp = () => {
+  const { socialSignIn } = useContext(AuthContext);
+  // const [error, setError] = useState("");
+
+  // ** Google
+
+  const googleProvider = new GoogleAuthProvider();
+  const googleHandler = () => {
+    const loginGoogle = async () => {
+      try {
+        await socialSignIn(googleProvider);
+        toast.success("User logged in");
+      } catch (error) {
+        toast.error(error.message);
+      }
+    };
+    loginGoogle();
+  };
+
   return (
     <div className="flex justify-center items-center pt-8">
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900">
@@ -74,7 +95,11 @@ const SignUp = () => {
           <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
         </div>
         <div className="flex justify-center space-x-4">
-          <button aria-label="Log in with Google" className="p-3 rounded-sm">
+          <button
+            onClick={googleHandler}
+            aria-label="Log in with Google"
+            className="p-3 rounded-sm"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 32 32"
