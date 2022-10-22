@@ -5,6 +5,7 @@ import bookingAnimation from "../../assests/Animations/travelBooking.json";
 import { DestinationContext } from "../../contexts/DestinationProvider";
 
 // Import Swiper styles
+import { MdPlace } from "react-icons/md";
 import { EffectCoverflow, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-cards";
@@ -39,13 +40,20 @@ const Home = () => {
                 <>
                   <SwiperSlide>
                     <img
-                      style={{ width: "400px" }}
+                      className="ring-4 ring-yellow-500"
+                      style={{ width: "1000px", height: "300px" }}
                       src={destination.picture}
                       alt=""
                     />
-                    <h1 className="text-white opacity-80 text-2xl">
-                      {destination.place}
-                    </h1>
+                    <div className="text-center">
+                      <small className="text-blue-700 mt-2 text-center flex items-center justify-center">
+                        <span>
+                          {" "}
+                          <MdPlace />
+                        </span>
+                        <p>{destination.place}</p>
+                      </small>
+                    </div>
                   </SwiperSlide>
                 </>
               ))}
