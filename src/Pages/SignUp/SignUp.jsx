@@ -56,6 +56,7 @@ const SignUp = () => {
       try {
         const result = await createUser(email, password);
         console.log(result.user);
+        toast.success("User logged in");
       } catch (error) {
         toast.error(error.message);
       }

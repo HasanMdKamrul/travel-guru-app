@@ -1,6 +1,34 @@
-import React from "react";
+import React, { useContext } from "react";
+import { toast } from "react-toastify";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 const SignIn = () => {
+  const { userLogin } = useContext(AuthContext);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    console.log(email, password, name);
+
+    // ** create user
+
+    const emailPassLogIn = async () => {
+      try {
+        const result = await userLogin(email, password);
+        console.log(result.user);
+        toast.success("User logged in");
+      } catch (error) {
+        toast.error(error.message);
+      }
+    };
+    emailPassLogIn();
+  };
+
   return (
     <div className="flex justify-center items-center pt-8">
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900">
@@ -11,6 +39,7 @@ const SignIn = () => {
           </p>
         </div>
         <form
+          onSubmit={handleSubmit}
           noValidate=""
           action=""
           className="space-y-6 ng-untouched ng-pristine ng-valid"

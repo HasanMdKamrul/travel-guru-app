@@ -4,6 +4,7 @@ import {
   onAuthStateChanged,
   sendEmailVerification,
   sendPasswordResetEmail,
+  signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
   updateProfile,
@@ -22,6 +23,13 @@ const useFirebase = () => {
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  // ** Email and pass signin
+
+  const userLogin = (email, password) => {
+    setLoading(true);
+    return signInWithEmailAndPassword(auth, email, password);
   };
 
   // ** Google signIn   //   ** Github signin
@@ -71,6 +79,7 @@ const useFirebase = () => {
 
   const authInfo = {
     createUser,
+    userLogin,
     loading,
     user,
     socialSignIn,
