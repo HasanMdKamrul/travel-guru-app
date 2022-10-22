@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { HiUserCircle } from "react-icons/hi2";
+import { MdLogin, MdLogout } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -87,16 +89,16 @@ const Navbar = () => {
         </div>
         <ul className="flex items-center hidden space-x-8 lg:flex">
           <li>
-            <button className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded">
-              Sign In
-            </button>
+            <MdLogin />
           </li>
           <li>
-            <button className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded">
-              Sign Up
-            </button>
+            <MdLogout />
+          </li>
+          <li>
+            <HiUserCircle />
           </li>
         </ul>
+
         <div className="lg:hidden">
           <button
             aria-label="Open Menu"
