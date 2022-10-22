@@ -1,3 +1,6 @@
+import BookingDetails from "../Pages/BookingDetails/BookingDetails";
+import SingleBooking from "../Pages/SingleBooking/SingleBooking";
+
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../layout/Main");
 const { default: ErrorPage } = require("../Pages/ErrorPage/ErrorPage");
@@ -16,6 +19,16 @@ const router = createBrowserRouter([
       {
         path: "/home",
         element: <Home />,
+      },
+      {
+        path: "/bookingdetails",
+        element: <BookingDetails />,
+      },
+      {
+        path: "/book/:id",
+        element: <SingleBooking />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:16000/destinations/${params.id}`),
       },
     ],
   },

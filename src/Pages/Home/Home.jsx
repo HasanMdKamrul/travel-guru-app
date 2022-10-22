@@ -7,6 +7,7 @@ import { DestinationContext } from "../../contexts/DestinationProvider";
 // Import Swiper styles
 import { HiArrowLongRight } from "react-icons/hi2";
 import { MdPlace } from "react-icons/md";
+import { Link } from "react-router-dom";
 import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-cards";
@@ -19,18 +20,8 @@ const Home = () => {
       <div className="flex flex-col items-center justify-between lg:flex-row">
         <div className="relative lg:w-1/2">
           <Lottie animationData={bookingAnimation} />
-          <button
-            type="button"
-            className="px-8 py-3 font-semibold border-0 bg-sky-400 flex justify-center items-center  rounded border-gray-100 text-slate-900"
-          >
-            Book Now
-            <HiArrowLongRight className="ml-2" />
-          </button>
         </div>
         <div className="mb-10 lg:max-w-lg  lg:mb-0 ">
-          {/* ** Swipper js */}
-          {/* cards destinations */}
-
           <Swiper
             slidesPerView={2.5}
             spaceBetween={10}
@@ -62,12 +53,14 @@ const Home = () => {
             {destinations.map((destination) => (
               <>
                 <SwiperSlide className="w-50">
-                  <img
-                    className="ring-4 rounded-2xl  ring-yellow-500  "
-                    style={{ height: "300px", width: "100%" }}
-                    src={destination.picture}
-                    alt=""
-                  />
+                  <Link to={`/book/${destination.id}`}>
+                    <img
+                      className="ring-4 rounded-2xl  ring-yellow-500  "
+                      style={{ height: "300px", width: "100%" }}
+                      src={destination.picture}
+                      alt=""
+                    />
+                  </Link>
                   <div className="text-center">
                     <small className="text-blue-700 mt-2 text-center flex items-center justify-center">
                       <span>
@@ -82,6 +75,17 @@ const Home = () => {
             ))}
           </Swiper>
         </div>
+      </div>
+      <div className="flex justify-center">
+        <Link to="/bookingdetails">
+          <button
+            type="button"
+            className="px-8 py-3 font-semibold border-0 bg-sky-400 flex justify-center items-center  rounded border-gray-100 text-slate-900"
+          >
+            Book Now
+            <HiArrowLongRight className="ml-2" />
+          </button>
+        </Link>
       </div>
     </div>
   );
