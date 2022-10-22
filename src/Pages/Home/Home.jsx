@@ -5,8 +5,9 @@ import bookingAnimation from "../../assests/Animations/travelBooking.json";
 import { DestinationContext } from "../../contexts/DestinationProvider";
 
 // Import Swiper styles
+import { HiArrowLongRight } from "react-icons/hi2";
 import { MdPlace } from "react-icons/md";
-import { EffectCoverflow, Pagination } from "swiper";
+import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-cards";
 
@@ -16,32 +17,28 @@ const Home = () => {
   return (
     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="flex flex-col items-center justify-between lg:flex-row">
+        <div className="relative lg:w-1/2">
+          <Lottie animationData={bookingAnimation} />
+        </div>
         <div className="mb-10 lg:max-w-lg lg:pr-5 lg:mb-0">
           {/* ** Swipper js */}
           {/* cards destinations */}
           <div className="w-full">
             <Swiper
-              effect={"coverflow"}
-              grabCursor={true}
-              centeredSlides={true}
-              slidesPerView={"auto"}
-              coverflowEffect={{
-                rotate: 50,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: true,
+              slidesPerView={3}
+              spaceBetween={30}
+              pagination={{
+                clickable: true,
               }}
-              pagination={true}
-              modules={[EffectCoverflow, Pagination]}
+              modules={[Pagination]}
               className="mySwiper"
             >
               {destinations.map((destination) => (
                 <>
-                  <SwiperSlide>
+                  <SwiperSlide style={{ width: "100%" }}>
                     <img
-                      className="ring-4 ring-yellow-500"
-                      style={{ width: "1000px", height: "300px" }}
+                      className="ring-4 rounded  ring-yellow-500  "
+                      style={{ width: "100%", height: "300px" }}
                       src={destination.picture}
                       alt=""
                     />
@@ -58,10 +55,14 @@ const Home = () => {
                 </>
               ))}
             </Swiper>
+            <button
+              type="button"
+              className="px-8 py-3 font-semibold border-0 bg-sky-400 flex justify-center items-center  rounded border-gray-100 text-slate-900"
+            >
+              Book Now
+              <HiArrowLongRight className="ml-2" />
+            </button>
           </div>
-        </div>
-        <div className="relative lg:w-1/2">
-          <Lottie animationData={bookingAnimation} />
         </div>
       </div>
     </div>

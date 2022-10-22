@@ -6,17 +6,17 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 text-white">
-      <div className="relative flex items-center justify-between text-white">
-        <div className="flex items-center text-white">
+    <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 text-slate-900">
+      <div className="relative flex items-center justify-between text-slate-900">
+        <div className="flex items-center text-slate-900">
           <Link
             to="/"
             aria-label="Company"
             title="Company"
-            className="inline-flex items-center mr-8 text-white"
+            className="inline-flex items-center mr-8 text-slate-900"
           >
             <svg
-              className="w-8 text-white"
+              className="w-8 text-slate-900"
               viewBox="0 0 24 24"
               strokeLinejoin="round"
               strokeWidth="2"
@@ -30,7 +30,7 @@ const Navbar = () => {
               <rect x="14" y="1" width="7" height="6" />
               <rect x="14" y="11" width="7" height="12" />
             </svg>
-            <span className="ml-2 text-xl font-bold tracking-widetext-white uppercase">
+            <span className="ml-2 text-xl font-bold tracking-widetext-slate-900 uppercase">
               Travel Guru
             </span>
           </Link>
@@ -40,7 +40,7 @@ const Navbar = () => {
                 to="/home"
                 aria-label="Our product"
                 title="Our product"
-                className="font-medium tracking-widetext-white transition-colors duration-200 hover:text-deep-purple-accent-400"
+                className="font-medium tracking-widetext-slate-900 transition-colors duration-200 hover:text-deep-purple-accent-400"
               >
                 Home
               </NavLink>
@@ -50,7 +50,7 @@ const Navbar = () => {
                 to="/destination"
                 aria-label="Our product"
                 title="Our product"
-                className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-deep-purple-accent-400"
+                className="font-medium tracking-wide text-slate-900 transition-colors duration-200 hover:text-deep-purple-accent-400"
               >
                 Destination
               </NavLink>
@@ -60,7 +60,7 @@ const Navbar = () => {
                 to="/Blog"
                 aria-label="Product pricing"
                 title="Product pricing"
-                className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-deep-purple-accent-400"
+                className="font-medium tracking-wide text-slate-900 transition-colors duration-200 hover:text-deep-purple-accent-400"
               >
                 Blog
               </NavLink>
@@ -70,7 +70,7 @@ const Navbar = () => {
                 to="/about"
                 aria-label="About us"
                 title="About us"
-                className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-deep-purple-accent-400"
+                className="font-medium tracking-wide text-slate-900 transition-colors duration-200 hover:text-deep-purple-accent-400"
               >
                 About us
               </NavLink>
@@ -80,7 +80,7 @@ const Navbar = () => {
                 to="/contact"
                 aria-label="About us"
                 title="About us"
-                className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-deep-purple-accent-400"
+                className="font-medium tracking-wide text-slate-900 transition-colors duration-200 hover:text-deep-purple-accent-400"
               >
                 Contact
               </NavLink>
@@ -133,7 +133,7 @@ const Navbar = () => {
                       className="inline-flex items-center"
                     >
                       <svg
-                        className="w-8 text-white"
+                        className="w-8 text-slate-900"
                         viewBox="0 0 24 24"
                         strokeLinejoin="round"
                         strokeWidth="2"
@@ -223,7 +223,7 @@ const Navbar = () => {
                     <li>
                       <a
                         href="/"
-                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-slate-900 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                         aria-label="Sign up"
                         title="Sign up"
                       >

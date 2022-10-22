@@ -1,3 +1,5 @@
 .backgroung-image-cover {
   background-image: url("../assests/images/Rectangle 1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
 }

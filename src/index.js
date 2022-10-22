@@ -8,9 +8,10 @@ import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  // backgroung-image-cover
   <React.StrictMode>
     <DestinationProvider>
-      <div className="bg-scroll backgroung-image-cover ">
+      <div className="bg-fixed  backgroung-image-cover  ">
         <App />
       </div>
     </DestinationProvider>
