@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const SignUp = () => {
-  const { socialSignIn } = useContext(AuthContext);
+  const { socialSignIn, createUser } = useContext(AuthContext);
   // const [error, setError] = useState("");
 
   // ** Google
@@ -38,6 +38,31 @@ const SignUp = () => {
     loginGithub();
   };
 
+  // ** email pass SignUp
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    console.log(email, password, name);
+
+    // ** create user
+
+    const emailPassUser = async () => {
+      try {
+        const result = await createUser(email, password);
+        console.log(result.user);
+      } catch (error) {
+        toast.error(error.message);
+      }
+    };
+    emailPassUser();
+  };
+
   return (
     <div className="flex justify-center items-center pt-8">
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900">
@@ -46,6 +71,7 @@ const SignUp = () => {
           <p className="text-sm text-gray-400">Create a new account</p>
         </div>
         <form
+          onSubmit={handleSubmit}
           noValidate=""
           action=""
           className="space-y-12 ng-untouched ng-pristine ng-valid"
