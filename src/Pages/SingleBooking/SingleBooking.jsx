@@ -1,6 +1,7 @@
 import { addDays } from "date-fns";
 import React, { useState } from "react";
 import { DateRangePicker } from "react-date-range";
+import { HiArrowLongRight } from "react-icons/hi2";
 import { Link, useLoaderData } from "react-router-dom";
 
 const SingleBooking = () => {
@@ -33,7 +34,7 @@ const SingleBooking = () => {
                 will love
               </span>
             </h2>
-            <p className="text-base text-gray-100 md:text-lg">{details}</p>
+            <p className="text-base text-slate-900 md:text-lg">{details}</p>
           </div>
           <Link
             to="/"
@@ -92,6 +93,15 @@ const SingleBooking = () => {
           />
         </div>
       </div>
+      <Link to="/startbooking">
+        <button
+          type="button"
+          className="px-8 py-3 font-semibold border-0 bg-sky-400 flex justify-center items-center  rounded border-gray-100 text-slate-900"
+        >
+          Start Booking
+          <HiArrowLongRight className="ml-2" />
+        </button>
+      </Link>
     </div>
   );
 };

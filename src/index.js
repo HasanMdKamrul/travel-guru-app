@@ -13,7 +13,7 @@ root.render(
   // backgroung-image-cover
   <React.StrictMode>
     <DestinationProvider>
-      <div className="bg-fixed  backgroung-image-cover  ">
+      <div className="bg-cover    ">
         <App />
       </div>
     </DestinationProvider>
