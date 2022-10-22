@@ -4,6 +4,7 @@ import "react-date-range/dist/theme/default.css"; // theme css file
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./assests/images/Rectangle 1.png";
+import AuthProvider from "./contexts/AuthProvider";
 import DestinationProvider from "./contexts/DestinationProvider";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
@@ -14,7 +15,9 @@ root.render(
   <React.StrictMode>
     <DestinationProvider>
       <div className="bg-cover    ">
-        <App />
+        <AuthProvider>
+          <App />
+        </AuthProvider>
       </div>
     </DestinationProvider>
   </React.StrictMode>
