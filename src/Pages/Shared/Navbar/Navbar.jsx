@@ -4,17 +4,17 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-      <div className="relative flex items-center justify-between">
-        <div className="flex items-center">
+    <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 text-white">
+      <div className="relative flex items-center justify-between text-white">
+        <div className="flex items-center text-white">
           <Link
             to="/"
             aria-label="Company"
             title="Company"
-            className="inline-flex items-center mr-8"
+            className="inline-flex items-center mr-8 text-white"
           >
             <svg
-              className="w-8 text-deep-purple-accent-400"
+              className="w-8 text-white"
               viewBox="0 0 24 24"
               strokeLinejoin="round"
               strokeWidth="2"
@@ -28,8 +28,8 @@ const Navbar = () => {
               <rect x="14" y="1" width="7" height="6" />
               <rect x="14" y="11" width="7" height="12" />
             </svg>
-            <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-              Company
+            <span className="ml-2 text-xl font-bold tracking-widetext-white uppercase">
+              Travel Guru
             </span>
           </Link>
           <ul className="flex items-center hidden space-x-8 lg:flex">
@@ -38,7 +38,7 @@ const Navbar = () => {
                 to="/home"
                 aria-label="Our product"
                 title="Our product"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                className="font-medium tracking-widetext-white transition-colors duration-200 hover:text-deep-purple-accent-400"
               >
                 Home
               </NavLink>
@@ -48,7 +48,7 @@ const Navbar = () => {
                 to="/destination"
                 aria-label="Our product"
                 title="Our product"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-deep-purple-accent-400"
               >
                 Destination
               </NavLink>
@@ -58,7 +58,7 @@ const Navbar = () => {
                 to="/Blog"
                 aria-label="Product pricing"
                 title="Product pricing"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-deep-purple-accent-400"
               >
                 Blog
               </NavLink>
@@ -68,7 +68,7 @@ const Navbar = () => {
                 to="/about"
                 aria-label="About us"
                 title="About us"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-deep-purple-accent-400"
               >
                 About us
               </NavLink>
@@ -78,7 +78,7 @@ const Navbar = () => {
                 to="/contact"
                 aria-label="About us"
                 title="About us"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-deep-purple-accent-400"
               >
                 Contact
               </NavLink>
@@ -87,12 +87,12 @@ const Navbar = () => {
         </div>
         <ul className="flex items-center hidden space-x-8 lg:flex">
           <li>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded">
               Sign In
             </button>
           </li>
           <li>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded">
               Sign Up
             </button>
           </li>
@@ -131,7 +131,7 @@ const Navbar = () => {
                       className="inline-flex items-center"
                     >
                       <svg
-                        className="w-8 text-deep-purple-accent-400"
+                        className="w-8 text-white"
                         viewBox="0 0 24 24"
                         strokeLinejoin="round"
                         strokeWidth="2"
