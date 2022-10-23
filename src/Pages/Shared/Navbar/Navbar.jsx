@@ -1,10 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { HiUserCircle } from "react-icons/hi2";
 import { MdLogin, MdLogout } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
+import { toast } from "react-toastify";
+import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const { user, logOut } = useContext(AuthContext);
+
+  // ** handleLogOut
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => toast.success("Logout successfull"))
+      .catch((e) => toast.error(e.message));
+  };
+
   return (
     <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 text-slate-900">
       <div className="relative flex items-center justify-between text-slate-900">
@@ -88,15 +101,35 @@ const Navbar = () => {
           </ul>
         </div>
         <ul className="flex items-center hidden space-x-8 lg:flex">
-          <li>
-            <MdLogin />
-          </li>
-          <li>
-            <MdLogout />
-          </li>
-          <li>
-            <HiUserCircle />
-          </li>
+          {user && user.uid ? (
+            <>
+              {" "}
+              <li onClick={handleLogOut}>
+                <MdLogout />
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Link to="signin">
+                  <MdLogin />
+                </Link>
+              </li>
+            </>
+          )}
+          {user && user.photoURL ? (
+            <li>
+              <img
+                alt=""
+                className="w-6 h-6 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 ring-violet-400 ring-offset-gray-800"
+                src={user.photoURL}
+              />
+            </li>
+          ) : (
+            <li>
+              <HiUserCircle />
+            </li>
+          )}
         </ul>
 
         <div className="lg:hidden">

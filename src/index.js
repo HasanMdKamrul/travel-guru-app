@@ -16,7 +16,7 @@ root.render(
   // backgroung-image-cover
   <React.StrictMode>
     <DestinationProvider>
-      <div className="bg-cover    ">
+      <div className="bg-cover backgroung-image-cover min-h-screen  ">
         <AuthProvider>
           <App />
           <ToastContainer />
