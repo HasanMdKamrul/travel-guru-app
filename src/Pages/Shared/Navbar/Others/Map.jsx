@@ -7,8 +7,8 @@ const containerStyle = {
 };
 
 const center = {
-  lat: -3.745,
-  lng: -38.523,
+  lat: 23.8103,
+  lng: 90.4125,
 };
 
 // ** https://react-google-maps-api-docs.netlify.app/
