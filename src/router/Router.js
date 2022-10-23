@@ -53,6 +53,7 @@ const router = createBrowserRouter([
       {
         path: "/startbooking",
         element: <Booking />,
+        loader: () => fetch(`https://travel-guru-server-one.vercel.app/hotels`),
       },
     ],
   },
