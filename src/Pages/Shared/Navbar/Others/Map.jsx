@@ -15,7 +15,7 @@ const center = {
 
 const MapCpmponent = () => {
   return (
-    <LoadScript googleMapsApiKey="AIzaSyCUWA-HhaIeT2bQrPcEGyZnyh-vlM02Sak">
+    <LoadScript googleMapsApiKey="">
       <div>
         <h1 className="text-3xl font-extrabold text-center">
           See Your Location
