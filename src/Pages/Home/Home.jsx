@@ -1,46 +1,71 @@
 import Lottie from "lottie-react";
 import React, { useContext } from "react";
 import bookingAnimation from "../../assests/Animations/travelBooking.json";
-import { DestinationContext } from "../../contexts/DestinationProvider";
+
+// ** Swiper
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-creative";
+
+// import required modules
 import { HiArrowLongRight } from "react-icons/hi2";
+import { MdPlace } from "react-icons/md";
 import { Link } from "react-router-dom";
-import image26 from "../../assests/images/Sajek.png";
-import image27 from "../../assests/images/Sreemongol.png";
-import image28 from "../../assests/images/sundorbon.png";
+import { EffectCoverflow, Pagination } from "swiper";
+import { DestinationContext } from "../../contexts/DestinationProvider";
 
 const Home = () => {
   const { destinations } = useContext(DestinationContext);
 
   return (
-    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-      <div className="flex flex-col items-center justify-between lg:flex-row">
-        <div className="relative lg:w-1/2">
+    <div>
+      <div className="grid grid-cols-2 gap-5">
+        <div className="flex justify-center items-center pt-40">
           <Lottie animationData={bookingAnimation} />
         </div>
-        <div className="mb-10 lg:max-w-lg  lg:mb-0 ">
-          <div className="flex items-center justify-center -mx-4 lg:pl-8">
-            <div className="flex flex-col items-end px-3">
-              <img
-                className="object-cover mb-6 rounded shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56"
-                src={image26}
-                alt=""
-              />
-              <img
-                className="object-cover w-20 h-20 rounded shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40"
-                src={image27}
-                alt=""
-              />
-            </div>
-            <div className="px-3">
-              <img
-                className="object-cover w-40 h-40 rounded shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80"
-                src={image28}
-                alt=""
-              />
-            </div>
-          </div>
+        <div className="flex justify-center items-center pt-40">
+          <Swiper
+            effect={"coverflow"}
+            grabCursor={true}
+            centeredSlides={true}
+            slidesPerView={"auto"}
+            coverflowEffect={{
+              rotate: 50,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: true,
+            }}
+            pagination={true}
+            modules={[EffectCoverflow, Pagination]}
+            className="mySwiper"
+          >
+            {destinations.map((destination) => (
+              <SwiperSlide key={destination.id}>
+                <Link to={`/book/${destination.id}`}>
+                  <div className="flex justify-center items-center">
+                    <img
+                      className="ring-2 ring-orange-400"
+                      style={{
+                        width: "270px",
+                        height: "416px",
+                        borderRadius: "20px",
+                      }}
+                      src={destination.picture}
+                      alt=""
+                    />
+                    <small className="opacity-60 ml-2 text-blue-700 mt-96">
+                      <MdPlace />
+                      {destination.place}
+                    </small>
+                  </div>
+                </Link>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
       <div className="flex justify-center">

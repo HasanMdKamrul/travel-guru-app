@@ -23,6 +23,7 @@ const router = createBrowserRouter([
         path: "/home",
         element: <Home />,
       },
+
       {
         path: "/bookingdetails",
         element: <BookingDetails />,
@@ -35,7 +36,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:16000/destinations/${params.id}`),
+          fetch(
+            `https://travel-guru-server-one.vercel.app/destinations/${params.id}`
+          ),
       },
       {
         path: "/signup",
