@@ -1,7 +1,7 @@
 import { addDays } from "date-fns";
 import React, { useState } from "react";
 import { DateRangePicker } from "react-date-range";
-import { HiArrowLongRight } from "react-icons/hi2";
+import { MdOutlineHotel, MdPlace } from "react-icons/md";
 import { Link, useLoaderData } from "react-router-dom";
 
 const SingleBooking = () => {
@@ -19,7 +19,7 @@ const SingleBooking = () => {
   return (
     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="grid gap-5 row-gap-8 lg:grid-cols-2">
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center mx-12">
           <div className="max-w-xl mb-6">
             <div>
               <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-slate-900 uppercase rounded-full bg-teal-accent-400">
@@ -52,10 +52,11 @@ const SingleBooking = () => {
           </Link>
         </div>
         <div>
-          <fieldset className="w-full space-y-1 text-gray-100">
+          <fieldset className="w-full space-y-1 text-slate-900">
             <div className="flex">
               <div className="mr-5">
                 <span className="flex items-center px-3 pointer-events-none sm:text-sm rounded-l-md">
+                  <MdPlace className="text-blue-600" />
                   Origin
                 </span>
                 <input
@@ -67,7 +68,8 @@ const SingleBooking = () => {
                 />
               </div>
               <div>
-                <span className="flex items-center px-3 pointer-events-none sm:text-sm text-white rounded-l-md">
+                <span className="flex items-center px-3 pointer-events-none sm:text-sm text-slate-900 rounded-l-md">
+                  <MdPlace className="text-blue-600" />
                   Destination
                 </span>
                 <input
@@ -96,10 +98,10 @@ const SingleBooking = () => {
       <Link to="/startbooking">
         <button
           type="button"
-          className="px-8 py-3 font-semibold border-0 bg-sky-400 flex justify-center items-center  rounded border-gray-100 text-slate-900"
+          className="px-8 mx-12 py-3 font-semibold border-0 bg-sky-400 flex justify-center items-center  rounded border-gray-100 text-slate-900"
         >
           Start Booking
-          <HiArrowLongRight className="ml-2" />
+          <MdOutlineHotel className="ml-2" />
         </button>
       </Link>
     </div>

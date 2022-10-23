@@ -3,6 +3,7 @@ import { HiUserCircle } from "react-icons/hi2";
 import { MdLogin, MdLogout } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
+import logo from "../../../assests/Logo/logo.png";
 import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Navbar = () => {
@@ -28,21 +29,8 @@ const Navbar = () => {
             title="Company"
             className="inline-flex items-center mr-8 text-slate-900"
           >
-            <svg
-              className="w-8 text-slate-900"
-              viewBox="0 0 24 24"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeMiterlimit="10"
-              stroke="currentColor"
-              fill="none"
-            >
-              <rect x="3" y="1" width="7" height="12" />
-              <rect x="3" y="17" width="7" height="6" />
-              <rect x="14" y="1" width="7" height="6" />
-              <rect x="14" y="11" width="7" height="12" />
-            </svg>
+            {/* w-8 */}
+            <img src={logo} className="w-8 h-8" alt="" />
             <span className="ml-2 text-xl font-bold tracking-widetext-slate-900 uppercase">
               Travel Guru
             </span>
@@ -101,6 +89,16 @@ const Navbar = () => {
           </ul>
         </div>
         <ul className="flex items-center hidden space-x-8 lg:flex">
+          {user && user.displayName ? (
+            <li>
+              {" "}
+              <small className="font-semibold">
+                {user.displayName.slice(0, 10)}
+              </small>{" "}
+            </li>
+          ) : (
+            <li></li>
+          )}
           {user && user.uid ? (
             <>
               {" "}
