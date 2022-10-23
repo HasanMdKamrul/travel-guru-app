@@ -14,9 +14,10 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // backgroung-image-cover
+  // className="bg-cover backgroung-image-cover min-h-screen  "
   <React.StrictMode>
     <DestinationProvider>
-      <div className="bg-cover backgroung-image-cover min-h-screen  ">
+      <div>
         <AuthProvider>
           <App />
           <ToastContainer />

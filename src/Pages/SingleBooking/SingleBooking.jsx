@@ -22,7 +22,7 @@ const SingleBooking = () => {
         <div className="flex flex-col justify-center">
           <div className="max-w-xl mb-6">
             <div>
-              <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-white uppercase rounded-full bg-teal-accent-400">
+              <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-slate-900 uppercase rounded-full bg-teal-accent-400">
                 {place}
               </p>
             </div>

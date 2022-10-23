@@ -2,6 +2,7 @@ import BookingDetails from "../Pages/BookingDetails/BookingDetails";
 import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
 import SingleBooking from "../Pages/SingleBooking/SingleBooking";
+import PrivateRoute from "./PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../layout/Main");
@@ -28,7 +29,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/book/:id",
-        element: <SingleBooking />,
+        element: (
+          <PrivateRoute>
+            <SingleBooking />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:16000/destinations/${params.id}`),
       },

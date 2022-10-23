@@ -1,10 +1,15 @@
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import React, { useContext } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const SignIn = () => {
   const { userLogin, socialSignIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   // ** Google
 
@@ -14,6 +19,7 @@ const SignIn = () => {
       try {
         await socialSignIn(googleProvider);
         toast.success("User logged in");
+        navigate(from, { replace: true });
       } catch (error) {
         toast.error(error.message);
       }
@@ -30,6 +36,7 @@ const SignIn = () => {
       try {
         await socialSignIn(githubProvider);
         toast.success("User logged in");
+        navigate(from, { replace: true });
       } catch (error) {
         toast.error(error.message);
       }
@@ -54,6 +61,7 @@ const SignIn = () => {
         const result = await userLogin(email, password);
         console.log(result.user);
         toast.success("User logged in");
+        navigate(from, { replace: true });
       } catch (error) {
         toast.error(error.message);
       }

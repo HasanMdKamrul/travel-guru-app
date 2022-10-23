@@ -60,7 +60,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/destination"
+                to="/bookingdetails"
                 aria-label="Our product"
                 title="Our product"
                 className="font-medium tracking-wide text-slate-900 transition-colors duration-200 hover:text-deep-purple-accent-400"

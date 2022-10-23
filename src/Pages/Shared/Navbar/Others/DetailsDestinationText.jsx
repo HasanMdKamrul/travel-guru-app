@@ -12,23 +12,23 @@ const DetailsDestinationText = ({ destination }) => {
         <p className="mb-3 text-xs font-semibold tracking-wide uppercase">
           <a
             href="/"
-            className="transition-colors duration-200 text-gray-200 hover:text-deep-purple-accent-700"
+            className="transition-colors duration-200 text-slate-900 hover:text-deep-purple-accent-700"
             aria-label="Category"
             title="traveling"
           >
             {place}
           </a>
-          <span className="text-gray-200">— 28 Dec 2020</span>
+          <span className="text-slate-900">— 28 Dec 2020</span>
         </p>
         <a
           href="/"
           aria-label="Category"
           title="Visit the East"
-          className="inline-block mb-3 text-2xl font-bold leading-5 transition-colors text-gray-200 duration-200 hover:text-deep-purple-accent-700"
+          className="inline-block mb-3 text-2xl font-bold leading-5 transition-colors text-slate-900 duration-200 hover:text-deep-purple-accent-700"
         >
           {place}
         </a>
-        <p className="mb-2 text-gray-200">
+        <p className="mb-2 text-slate-900">
           {details.length > 200 ? details.slice(0, 200) + "..." : details}
         </p>
         <Link
@@ -38,7 +38,7 @@ const DetailsDestinationText = ({ destination }) => {
         >
           <button
             type="button"
-            className="px-8 py-3 font-semibold border-0 bg-sky-400 flex justify-center items-center  rounded border-gray-100 text-gray-200"
+            className="px-8 py-3 font-semibold border-0 bg-sky-400 flex justify-center items-center  rounded border-gray-100 text-slate-900"
           >
             Book Now
             <HiArrowLongRight className="ml-2" />
