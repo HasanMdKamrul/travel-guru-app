@@ -48,7 +48,7 @@ const Home = () => {
                 <Link to={`/book/${destination.id}`}>
                   <div className="flex justify-center items-center">
                     <img
-                      className="ring-2 ring-orange-400"
+                      className="ring-2 ring-orange-400 hover:ring-sky-500"
                       style={{
                         width: "270px",
                         height: "416px",

@@ -1,6 +1,6 @@
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import React, { useContext } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../contexts/AuthProvider";
 
@@ -70,7 +70,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="flex justify-center items-center pt-8">
+    <div className="flex justify-center items-center pt-40">
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Sign in</h1>
@@ -174,9 +174,9 @@ const SignIn = () => {
         </div>
         <p className="px-6 text-sm text-center text-gray-400">
           Don't have an account yet?{" "}
-          <a href="#" to="/register" className="hover:underline text-gray-600">
+          <Link to="/signup" className="hover:underline text-gray-600">
             Sign up
-          </a>
+          </Link>
           .
         </p>
       </div>

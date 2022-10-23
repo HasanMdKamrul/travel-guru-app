@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 text-slate-900">
+    <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 text-slate-900 border-b-2 border-slate-900 ">
       <div className="relative flex items-center justify-between text-slate-900">
         <div className="flex items-center text-slate-900">
           <Link
