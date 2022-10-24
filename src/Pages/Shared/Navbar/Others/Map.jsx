@@ -18,7 +18,7 @@ const MapCpmponent = () => {
     <LoadScript googleMapsApiKey="">
       <div>
         <h1 className="text-3xl font-extrabold text-center">
-          See Your Location
+          See Our Location
         </h1>
 
         <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>

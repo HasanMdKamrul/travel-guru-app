@@ -1,11 +1,20 @@
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import { MdOutlineClose } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const SignUp = () => {
   const { socialSignIn, createUser } = useContext(AuthContext);
+  const [userInformation, setUserInformatio] = useState({
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState({
+    email: "",
+    password: "",
+  });
   // const [error, setError] = useState("");
 
   // ** Google
@@ -65,6 +74,18 @@ const SignUp = () => {
     emailPassUser();
   };
 
+  const emailHandle = (event) => {
+    const email = event.target.value;
+    if (/^\S+@\S+\.\S+$/.test(email)) {
+      console.log("email confirmed");
+      setUserInformatio({ ...userInformation, email: email });
+      setError({ ...error, email: "" });
+    } else {
+      console.log("wron email");
+      setError({ ...error, email: "Incorrect Email" });
+    }
+  };
+
   return (
     <div className="flex justify-center items-center pt-40">
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900">
@@ -97,6 +118,7 @@ const SignUp = () => {
                 Email address
               </label>
               <input
+                onChange={emailHandle}
                 type="email"
                 name="email"
                 id="email"
@@ -104,6 +126,14 @@ const SignUp = () => {
                 className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900"
                 data-temp-mail-org="0"
               />
+              <div className="mt-2">
+                {error && error.email && (
+                  <div className="flex items-center">
+                    <MdOutlineClose />
+                    <small className="text-red-500">{error.email}</small>
+                  </div>
+                )}
+              </div>
             </div>
             <div>
               <div className="flex justify-between mb-2">
